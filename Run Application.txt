@@ -1,0 +1,39 @@
+Install Dependencies
+pip install -r requirements.txt
+ Run the Application
+uvicorn app.main:app --reload
+
+Server will start at:
+
+http://127.0.0.1:8000
+ Swagger Documentation
+
+Open in browser:
+
+http://127.0.0.1:8000/docs
+
+Interactive API testing available via Swagger UI.
+
+ Running Tests
+pytest
+Running with Docker
+Build Image
+docker build -t address-book-api .
+run Container
+docker run -p 8000:8000 address-book-api
+
+Access:
+
+http://localhost:8000/docs
+
+ API Endpoints
+Create Address
+POST /addresses
+Get All Addresses
+GET /addresses
+Update Address
+PUT /addresses/{address_id}
+Delete Address
+DELETE /addresses/{address_id}
+Get Nearby Addresses
+GET /addresses/nearby?lat=12.9&lon=77.5&distance_km=5
